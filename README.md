@@ -94,17 +94,28 @@ For bone cancer detection, Firstly, we have implemented the K Means clustering a
 ### 3.2 Fuzzy C Means Clustering
 Secondly, we have implemented Fuzzy C Means clustering.
  Let X = {x1, x2, x3 ..., xn} be the set of data points and V = {v1, v2, v3 ..., vc} be the set of centers.
-	Randomly select ‘c’ cluster centers.
-	Calculate the fuzzy membership 'µij' using:
-μ_ij=1 / ∑_(k=1)^c▒〖(d_ij  / d_ik)〗^((2/m-1)) 	
+1. Randomly select ‘c’ cluster centers.
+2. Calculate the fuzzy membership 'µij' using:
+	<br>
+	![image](https://user-images.githubusercontent.com/25412736/174881871-41b9d6ec-f92a-496b-900d-5dc81ad2d482.png)
+	<br>	
+3. Compute the fuzzy centres 'vj' using
+	<br>
+![image](https://user-images.githubusercontent.com/25412736/174881973-47d5e38b-2ead-48f7-9cb5-4588c8dd3c88.png)
+	<br>
+4.Repeat step 2) and 3) until the minimum 'J' value is achieved or ||U(k+1) - U(k)|| < β. 
+where
+	‘k’ is the iteration step. 
+	‘β’ is the termination criterion between [0, 1].
+	‘U = (µij)n*c’ is the fuzzy membership matrix.
+	‘J’ is the objective function
+	
+3.3 Selection of Best Cluster
 
-	Compute the fuzzy centres 'vj' using:
-v_j=((∑_(i=1)^n▒〖(μ_ij )^(m ) x_i 〗))/  (∑_(i=1)^n▒(μ_ij )^(m ) ),∀_j=1,2,…..c	
-	Repeat step 2) and 3) until the minimum 'J' value is achieved or ||U(k+1) - U(k)|| < β. 
-where, 
-‘k’ is the iteration step. 
-‘β’ is the termination criterion between [0, 1].
-‘U = (µij)n*c’ is the fuzzy membership matrix.
-‘J’ is the objective function
+After clustering into ‘x’ number of clusters, we have to select the best cluster based on some criteria. Hence selection algorithm is as below: <br>
+i.	Calculate the sum of all pixel values for each cluster. <br>
+ii.	Find maximum sum value from all cluster sum. <br>
+iii.	Assign best cluster with highest sum value <br>
+
 
 #Bone #Cancer #Detection #Classification #Matlab #GUI #machinelearning #ComputerVision #ImageProcessing #DeepLearning #Feature #Fusion #Extraction #FYP #Project
