@@ -1,5 +1,11 @@
 # EFFICIENT WAY TO DETECT BONE CANCER USING IMAGE SEGMENTATION-in-Matlab-using-Image-Processing-Techniques
 
+
+## Demo ->
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/25412736/183263897-fb624ff8-806b-4ef3-b2d6-8db269e0e550.gif)
+
+
 ## Bone Cancer Detection, a GUI-based application in Matlab using Image Processing Techniques.
 
 ## 1. System Design
